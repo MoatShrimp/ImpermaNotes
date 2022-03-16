@@ -99,5 +99,19 @@ public partial class SqliteApiTests : IDisposable
     result!.Count().Should().Be(10);
   }
 
+  [Fact]
+  public async void Should_Add_New_Post_Via_Controller()
+  {
+    // Arrange
+    using var context = CreateContext();
+    var controller = new MessageController(context);
+    var newMsg = new MessageCreationRequest {Title = "A title", Message = "A message"};
+    
+    // Act
+    var messagesTask = await controller.NewMessage(newMsg);
+    var message = await context.Messages.FirstOrDefaultAsync(m => m.Title == newMsg.Title);
+
+    // Assert
+    message!.Title.Should().Be("A title");
   }
 }
