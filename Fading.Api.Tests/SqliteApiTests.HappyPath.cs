@@ -18,32 +18,27 @@ public partial class SqliteApiTests : IDisposable
     using var context = new MessageContext(_contextOptions);
     context.Database.EnsureCreated();
 
-    var msgReq1 = new MessageCreationRequest {Title = "Message One", Message = "This is the content on message one"};
-    var msgReq2 = new MessageCreationRequest {Title = "Message Two", Message = "This is the content on message two"};
-    var msgReq3 = new MessageCreationRequest {Title = "Message Three", Message = "This is the content on message three"};
-    var msgReq4 = new MessageCreationRequest {Title = "Message Four", Message = "This is the content on message four"};
-    var msgReq5 = new MessageCreationRequest {Title = "Message Five", Message = "This is the content on message five"};
-    var msgReq6 = new MessageCreationRequest {Title = "Message Six", Message = "This is the content on message six"};
-    var msgReq7 = new MessageCreationRequest {Title = "Message Seven", Message = "This is the content on message seven"};
-    var msgReq8 = new MessageCreationRequest {Title = "Message Eight", Message = "This is the content on message eight"};
-    var msgReq9 = new MessageCreationRequest {Title = "Message Nine", Message = "This is the content on message nine"};
-    var msgReq10 = new MessageCreationRequest {Title = "Message Ten", Message = "This is the content on message ten"};
-    var msgReq11 = new MessageCreationRequest {Title = "Message Eleven", Message = "This is the content on message eleven"};
-    var msgReq12 = new MessageCreationRequest {Title = "Message Twelve", Message = "This is the content on message twelve"};
-    
     context.AddRange(
-      msgReq1.ToTemporaryMessage(),
-      msgReq2.ToTemporaryMessage(),
-      msgReq3.ToTemporaryMessage(),
-      msgReq4.ToTemporaryMessage(),
-      msgReq5.ToTemporaryMessage(),
-      msgReq6.ToTemporaryMessage(),
-      msgReq7.ToTemporaryMessage(),
-      msgReq8.ToTemporaryMessage(),
-      msgReq9.ToTemporaryMessage(),
-      msgReq10.ToTemporaryMessage(),
-      msgReq11.ToTemporaryMessage(),
-      msgReq12.ToTemporaryMessage()
+      new TemporaryMessage("Message One", "This is the content on message one")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Two", "This is the content on message two")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Three", "This is the content on message three")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Four", "This is the content on message four")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Five", "This is the content on message five")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Six", "This is the content on message six")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Seven", "This is the content on message seven")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Eight", "This is the content on message eight")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Nine", "This is the content on message nine")
+        {DeathTime = DateTime.Now.AddHours(2)},
+      new TemporaryMessage("Message Ten", "This is the content on message ten")
+        {DeathTime = DateTime.Now.AddHours(2)}
     );
     context.SaveChanges();
   }
