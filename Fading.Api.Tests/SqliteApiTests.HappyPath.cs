@@ -58,6 +58,26 @@ public partial class SqliteApiTests : IDisposable
     var result = messagesTask.Value;
 
     // Assert
-    result!.Count().Should().Be(12);
+
+  [Fact]
+  public async void Should_Add_One_Included_Message()
+  {
+    // Arrange
+    using var context = CreateContext();
+    var controller = new MessageController(context);
+    
+    // Act
+    context.Add(
+      new TemporaryMessage("Message Another", "This is the content on message Another")
+        {DeathTime = DateTime.Now.AddHours(2)}
+    );
+    context.SaveChanges();
+    var messagesTask = await controller.GetAllMessages();
+    var result = messagesTask.Value;
+
+    // Assert
+    result!.Count().Should().Be(11);
+  }
+
   }
 }
