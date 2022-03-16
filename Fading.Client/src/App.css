@@ -1,0 +1,46 @@
+.wrap__app{
+  max-width:1200px;
+  margin:0 auto;
+}
+.app-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    justify-content: center;
+}
+
+.app-header img {
+  max-height:100%;
+  max-width: 100%;
+}
+
+.app-header__box {
+  position: relative;
+  margin: 1rem;
+  padding: 1em;
+  text-align: center;
+  height: 200px;
+  width: 300px;
+  
+}
+
+.app-header__logo {
+  font-size: 2.8em;
+  text-align: center;
+}
+
+.salt-logo{
+  font-size: 3.5em;
+  text-align: center;
+  font-weight: normal;
+  line-height: 90px;
+  display:none;
+}
+
+@media (min-width: 995px) {
+  .salt-logo {
+    display:block;
+  }
+}
