@@ -18,14 +18,6 @@ namespace Fading.Api.Controllers
       return await _context.Messages.ToListAsync();
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<TemporaryMessage>> GetMessage(int id)
-    {
-      var message = await _context.Messages.FindAsync(id);
-      if (message is null) return NotFound($"No message with the id: '{id}' was found!");
-      return message;
-    }
-
     [HttpPost]
     public async Task<ActionResult<TemporaryMessage>> NewMessage([Required] MessageCreationRequest message)
     {
@@ -39,7 +31,5 @@ namespace Fading.Api.Controllers
 
       return CreatedAtAction("GetMessage", new { id = tempMessage.Id }, tempMessage);
     }
-
-    private bool MessageExists(int id) => _context.Messages.Any(e => e.Id == id);
   }
 }
