@@ -34,6 +34,11 @@
     <Using Include="System.Linq" />
     <Using Include="Xunit" />
     <Using Include="FluentAssertions" />
+    <Using Include="Fading.Api.Models" />
+    <Using Include="Fading.Api.Controllers" />
+    <Using Include="Fading.Api.Data" />
+    <Using Include="System.Data.Common" />
+    <Using Include="Microsoft.Data.Sqlite" />
   </ItemGroup>
 
 </Project>

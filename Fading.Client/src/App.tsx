@@ -6,8 +6,7 @@ import { Msg } from './components/types.global';
 
 export default function App() {
 
-  const [messages, setMessages] = useState<Msg[]>(new Array<Msg>());
-  
+  const [messages, setMessages] = useState<Msg[]>([]);
   const addMessage = (newMsg:Msg) => setMessages(old => old.concat(newMsg));
   const removeMessage = (id:number) => setMessages(old => old.filter(msg => msg.id !== id));
 
@@ -24,9 +23,7 @@ export default function App() {
         <MessageForm addMessage={addMessage}/>
         <h2 className='app-header__box salt-logo'>&lt;salt/&gt;</h2>
       </header>
-      <main>
-        <MessagesCanvas messages={messages} remove={removeMessage} />
-      </main>
+      <MessagesCanvas messages={messages} remove={removeMessage} />
     </article>
   );
 }
