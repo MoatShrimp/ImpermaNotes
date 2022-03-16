@@ -58,6 +58,8 @@ public partial class SqliteApiTests : IDisposable
     var result = messagesTask.Value;
 
     // Assert
+    result!.Count().Should().Be(10);
+  }
 
   [Fact]
   public async void Should_Add_One_Included_Message()
