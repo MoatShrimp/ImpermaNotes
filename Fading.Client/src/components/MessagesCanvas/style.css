@@ -5,12 +5,12 @@
   flex-wrap: wrap;
   justify-content: center;
   max-height: 100vh;
-  transition: max-height 0.5s ease-in;
+  transition: max-height 0.2s ease-in;
   overflow: hidden;
 }
 
 .message-container:empty{
   max-height: 0;
-  transition: max-height 0.5s ease-out;
+  transition: max-height 0.2s ease-out;
 }
 
