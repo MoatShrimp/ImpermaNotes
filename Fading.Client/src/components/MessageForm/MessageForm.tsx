@@ -9,9 +9,7 @@ export default function MessageForm({ addMessage }:MessageFormProps) {
   const detailsInput = useRef<HTMLTextAreaElement>(null);
 
   const getInputValue = (input:any) => input.current!.value.trim();
-  const resetInputValues = (...inputs:any[])=> (
-    inputs.forEach(input => input.current!.value = '')
-  );
+  const resetInputValues = (...inputs:any[])=> inputs.forEach(input => input.current!.value = '');
 
   const newMessage = (event:FormEvent) => {
     event.preventDefault();
@@ -38,8 +36,7 @@ export default function MessageForm({ addMessage }:MessageFormProps) {
       <input 
         ref={titleInput} 
         type="text" 
-        placeholder="All of this" 
-        id="txtTodoItemToAdd" 
+        placeholder="All of this"
         maxLength={30}
         className="message-form__input message-form__-title" />
       <textarea 
@@ -50,7 +47,6 @@ export default function MessageForm({ addMessage }:MessageFormProps) {
       <input
         type="submit"
         value="Add Entry"
-        id="btnAddTodo"
         className="message-form__input message-form__button"/>
   </form>
   );

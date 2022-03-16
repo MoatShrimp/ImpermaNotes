@@ -1,5 +1,4 @@
 namespace Fading.Api.Models;
-
 public class TemporaryMessage
 {
   public static Random Random = new Random();

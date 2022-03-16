@@ -18,8 +18,9 @@
   <ItemGroup>
     <Using Include="Microsoft.AspNetCore.Mvc" />
     <Using Include="Microsoft.EntityFrameworkCore" />
-    <Using Include="System.ComponentModel.DataAnnotations" />
-    <Using Include="System.ComponentModel.DataAnnotations.Schema" />
+    <Using Include="Fading.Api.Models" />
+    <Using Include="Fading.Api.Controllers" />
+    <Using Include="Fading.Api.Data" />
   </ItemGroup>
 
 </Project>

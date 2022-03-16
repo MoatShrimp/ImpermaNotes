@@ -1,5 +1,3 @@
-using Fading.Api.Models;
-
 namespace Fading.Api.Data;
 public class MessageContext : DbContext
 {
